@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جدول الفيتامينات</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: right;
+            margin: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        #datetime {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:nth-child(odd) {
+            background-color: #e9e9e9;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 1em;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>جدول الفيتامينات</h1>
+        <div id="datetime"></div>
+    </div>
+
+    <div class="buttons">
+        <button onclick="window.print()">طباعة</button>
+        <button onclick="copyContent()">نسخ المحتوى</button>
+        <button onclick="sendWhatsApp()">إرسال عبر واتساب</button>
+        <button onclick="sendEmail()">إرسال عبر البريد الإلكتروني</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>رقم</th>
+                <th>الفيتامين</th>
+                <th>الوصف</th>
+                <th>الكمية اليومية الموصى بها</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>فيتامين أ</td>
+                <td>ضروري للرؤية ووظيفة الجهاز المناعي وصحة الجلد.</td>
+                <td>900 مكغ (للرجال), 700 مكغ (للنساء)</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>فيتامين ب1 (الثيامين)</td>
+                <td>يساعد في تحويل العناصر الغذائية إلى طاقة ويدعم وظيفة الأعصاب.</td>
+                <td>1.2 ملغ (للرجال), 1.1 ملغ (للنساء)</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>فيتامين ب2 (الريبوفلافين)</td>
+                <td>مهم لإنتاج الطاقة ووظيفة الخلايا.</td>
+                <td>1.3 ملغ (للرجال), 1.1 ملغ (للنساء)</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>فيتامين ب3 (النياسين)</td>
+                <td>يدعم التمثيل الغذائي وإنتاج وإصلاح الحمض النووي.</td>
+                <td>16 ملغ (للرجال), 14 ملغ (للنساء)</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>فيتامين ب5 (حمض البانتوثنيك)</td>
+                <td>ضروري لتكوين الإنزيم A وإنتاج الهرمونات.</td>
+                <td>5 ملغ</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>فيتامين ب6</td>
+                <td>مهم لاستقلاب الأحماض الأمينية وتكوين خلايا الدم الحمراء وإنتاج النواقل العصبية.</td>
+                <td>1.3-1.7 ملغ (للرجال), 1.3-1.5 ملغ (للنساء)</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>فيتامين ب7 (البيوتين)</td>
+                <td>يدعم استقلاب الدهون والكربوهيدرات والبروتينات.</td>
+                <td>30 مكغ</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>فيتامين ب9 (الفولات)</td>
+                <td>ضروري لانقسام الخلايا وتكوين الحمض النووي.</td>
+                <td>400 مكغ</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>فيتامين ب12 (الكوبالامين)</td>
+                <td>ضروري لتكوين خلايا الدم الحمراء ووظيفة الأعصاب وتكوين الحمض النووي.</td>
+                <td>2.4 مكغ</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>فيتامين ج</td>
+                <td>مضاد للأكسدة، يدعم وظيفة الجهاز المناعي وصحة الجلد والتئام الجروح.</td>
+                <td>90 ملغ (للرجال), 75 ملغ (للنساء)</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>فيتامين د</td>
+                <td>ضروري لصحة العظام ووظيفة الجهاز المناعي وامتصاص الكالسيوم.</td>
+                <td>20 مكغ (800 وحدة دولية)</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>فيتامين هـ</td>
+                <td>مضاد للأكسدة، يدعم وظيفة الجهاز المناعي وصحة الجلد.</td>
+                <td>15 ملغ</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>فيتامين ك</td>
+                <td>مهم لتخثر الدم وصحة العظام.</td>
+                <td>120 مكغ (للرجال), 90 مكغ (للنساء)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            document.getElementById('datetime').textContent = now.toLocaleDateString('ar-SA', options);
+        }
+
+        function copyContent() {
+            const range = document.createRange();
+            range.selectNode(document.querySelector('table'));
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            alert('تم نسخ المحتوى');
+        }
+
+        function sendWhatsApp() {
+            const text = encodeURIComponent(document.querySelector('table').innerText);
+            window.open(`https://wa.me/?text=${text}`, '_blank');
+        }
+
+        function sendEmail() {
+            const subject = encodeURIComponent('جدول الفيتامينات');
+            const body = encodeURIComponent(document.querySelector('table').innerText);
+            window.open(`mailto:?subject=${subject}&body=${body}`, '_self');
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
